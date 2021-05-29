@@ -5,7 +5,6 @@ const User = require("../models/user");
 
 const jwt = require("jsonwebtoken");
 
-router.get("/", (req, res) => res.send("Hello World"));
 
 router.post("/signup", async (req, res) => {
   const { email, password } = req.body;
