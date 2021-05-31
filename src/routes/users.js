@@ -28,22 +28,5 @@ router.post('/signin', async (req, res) => {
   return res.status(200).json({token});
 });;
 
-router.get('/incidencias', veryfytoken, (req, res) => {
-
-})
 
 module.exports = router;
-
-function veryfytoken(req, res, next) {
-  if (!req.headers.authorization) {
-    return res.status(401).send("Autorization");
-  }
-  const token = req.headers.autorization.split("")[1];
-  if (token === "null") {
-    return res.status(401).send("Unathorize Resquest");
-  }
-
-  const payload = jwt.verify(token, "secretkey");
-  req.userId = payload._id;
-  next();
-}
