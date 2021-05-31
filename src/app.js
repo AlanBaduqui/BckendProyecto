@@ -10,10 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-app.use('/api/incidencias', require('./routes/incidencias'));
+app.use('/incidencias', require('./routes/incidencias'));
 
 //Ruta de login
-app.use('/api',require('./routes/users'));
+app.use('/users',require('./routes/users'));
 
 
 module.exports = app;
