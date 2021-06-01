@@ -25,17 +25,19 @@ incidenciasCtrl.getIncidencia = async (req, res) => {
   res.json(incid);
 };
 
-incidenciasCtrl.updateIncidencia = (req, res) => {
-  /*
-    aqui se actualiza el estado del reporte
-    const { state } = req.body;
-    await Note.findOneAndUpdate({_id: req.params.id}, {
-        state
+incidenciasCtrl.updateIncidencia = async (req, res) => {
+    //aqui se actualiza el estado del reporte
+    const { nombre, admi, problem, descri, } = req.body;
+    await Incid.findOneAndUpdate({_id: req.params.id}, {
+        nombre,
+        admi,
+        problem,
+        descri
+
     });
     
-    */
-  console.log(req.params.id);
-  res.json({ messsenger: "Incidencia Actualizada" });
+    console.log(req.params.id);
+    res.json({ messsenger: 'Incidencia Actualizada' });
 };
 
 incidenciasCtrl.deleteIncidencia = async (req, res) => {
